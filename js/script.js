@@ -79,16 +79,21 @@ function getRandomQuote(list) {
 function printQuote() {
   var randomQuote = getRandomQuote(quotes);
   var html = '';
-
-  if (randomQuote.year && randomQuote.citation) {
-    html += '<p class="quote">' + randomQuote.quote + '</p>' + '<p class="source">' + randomQuote.source + '<span class="citation">' + randomQuote.citation + '</span><span class="year">' + randomQuote.year + '</span></p>';
-  } else if (randomQuote.year) {
-    html += '<p class="quote">' + randomQuote.quote + '</p>' + '<p class="source">' + randomQuote.source + '<span class="year">' + randomQuote.year + '</span></p>';
-  } else if (randomQuote.citation) {
-    html += '<p class="quote">' + randomQuote.quote + '</p>' + '<p class="source">' + randomQuote.source + '<span class="citation">' + randomQuote.citation + '</span></p>';
-  } else {
-    html += '<p class="quote">' + randomQuote.quote + '</p>' + '<p class="source">' + randomQuote.source + '</p>';
+  var quoted = '<p class="quote">' + randomQuote.quote + '</p>';
+  var sourced = '<p class="source">' + randomQuote.source;
+  var cited = '<span class="citation">' + randomQuote.citation + '</span>';
+  var dated = '<span class="year">' + randomQuote.year + '</span>';
+  var close = '</p>';
+  
+  html += quoted + sourced;
+  if (randomQuote.citation) {
+    html += cited;
   }
+  if (randomQuote.year) {
+    html += dated;
+  }
+  html += close
+
   document.getElementById('quote-box').innerHTML = html;
 }
 
