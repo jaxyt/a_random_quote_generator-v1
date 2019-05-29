@@ -15,6 +15,8 @@ project 1 - A Random Quote Generator
   Use console.log() to log your array of quotes to the console.
 ***/
 
+
+//This is the quote database.
 var quotes = [
   {
       quote: 'Get busy living or get busy dying.', 
@@ -58,8 +60,8 @@ var quotes = [
 ***/
 
 function getRandomQuote(list) {
-  var randomIndex = Math.floor(Math.random() * list.length);
-  return list[randomIndex]
+  var randomIndex = Math.floor(Math.random() * list.length); //This function generates a random number, between 1 and 0, then multiplies that number by the total amount of quotes in our database 
+  return list[randomIndex] //The generated number is then used as the index of a quote within the database. the returned object is the quote at the generated index.
 }
 
 
@@ -79,13 +81,13 @@ function getRandomQuote(list) {
 function printQuote() {
   var randomQuote = getRandomQuote(quotes);
   var html = '';
-  var quoted = '<p class="quote">' + randomQuote.quote + '</p>';
+  var quoted = '<p class="quote">' + randomQuote.quote + '</p>'; //I stored all of my html scripts into easily identified variables
   var sourced = '<p class="source">' + randomQuote.source;
   var cited = '<span class="citation">' + randomQuote.citation + '</span>';
   var dated = '<span class="year">' + randomQuote.year + '</span>';
   var close = '</p>';
-  
-  html += quoted + sourced;
+
+  html += quoted + sourced; //the function checks for the citation and the year, independent of eachothers outcomes
   if (randomQuote.citation) {
     html += cited;
   }
@@ -94,7 +96,7 @@ function printQuote() {
   }
   html += close
 
-  document.getElementById('quote-box').innerHTML = html;
+  document.getElementById('quote-box').innerHTML = html; //this sets the html within the div "quote-box" to the contents of my html variable.
 }
 
 
