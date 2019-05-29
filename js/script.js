@@ -89,6 +89,7 @@ function printQuote() {
   } else {
     html += '<p class="quote">' + randomQuote.quote + '</p>' + '<p class="source">' + randomQuote.source + '</p>';
   }
+  document.getElementById('quote-box').innerHTML = html;
 }
 
 
