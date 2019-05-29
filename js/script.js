@@ -79,15 +79,15 @@ function getRandomQuote(list) {
 function printQuote() {
   var randomQuote = getRandomQuote(quotes);
   var html = '';
-  
-  if (randomQuote.year && randomQuote.citation) {
-    
-  } else if (randomQuote.year) {
-    
-  } else if (randomQuote.citation) {
-    
-  } else {
 
+  if (randomQuote.year && randomQuote.citation) {
+    html += '<p class="quote">' + randomQuote.quote + '</p>' + '<p class="source">' + randomQuote.source + '<span class="citation">' + randomQuote.citation + '</span><span class="year">' + randomQuote.year + '</span></p>';
+  } else if (randomQuote.year) {
+    html += '<p class="quote">' + randomQuote.quote + '</p>' + '<p class="source">' + randomQuote.source + '<span class="year">' + randomQuote.year + '</span></p>';
+  } else if (randomQuote.citation) {
+    html += '<p class="quote">' + randomQuote.quote + '</p>' + '<p class="source">' + randomQuote.source + '<span class="citation">' + randomQuote.citation + '</span></p>';
+  } else {
+    html += '<p class="quote">' + randomQuote.quote + '</p>' + '<p class="source">' + randomQuote.source + '</p>';
   }
 }
 
