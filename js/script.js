@@ -15,7 +15,40 @@ project 1 - A Random Quote Generator
   Use console.log() to log your array of quotes to the console.
 ***/
 
-
+var quotes = [
+  {
+      quote: 'Get busy living or get busy dying.', 
+      source: 'Stephen King', 
+      citation: 'Shawshank Redemption', 
+      year: 1994
+  },
+  {
+      quote: 'Great minds discuss ideas; average minds discuss events; small minds discuss people.', 
+      source: 'Eleanor Roosevelt',  
+      year: 1987
+  },
+  {
+      quote: 'Those who dare to fail miserably can achieve greatly.', 
+      source: 'John F. Kennedy', 
+      citation: 'US Inaugural Address', 
+      year: 1989
+  },
+  {
+      quote: 'It is hard to fail, but it is worse never to have tried to succeed.', 
+      source: 'Theodore Roosevelt', 
+  },
+  {
+      quote: 'Every man loves justice at another man’s expense.', 
+      source: 'Anonymous',
+      citation: 'Forbes'
+  },
+  {
+      quote: 'Humility is no substitute for a good personality.', 
+      source: 'Fran Leibowitz', 
+      citation: 'Metropolitan Life', 
+      year: 1978
+  }
+];
 
 
 /***
@@ -24,7 +57,10 @@ project 1 - A Random Quote Generator
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
 
-
+function getRandomQuote(list) {
+  var randomIndex = Math.floor(Math.random() * list.length);
+  return list[randomIndex]
+}
 
 
 /***
@@ -40,7 +76,20 @@ project 1 - A Random Quote Generator
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
 
+function printQuote() {
+  var randomQuote = getRandomQuote(quotes);
+  var html = '';
+  
+  if (randomQuote.year && randomQuote.citation) {
+    
+  } else if (randomQuote.year) {
+    
+  } else if (randomQuote.citation) {
+    
+  } else {
 
+  }
+}
 
 
 /***
