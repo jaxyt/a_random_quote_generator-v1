@@ -80,13 +80,13 @@ function printQuote() {
   }
   html += close
   if (randomQuote.categoryTags) {
-    var tags = randomQuote.categoryTags.join(', ');
+    var tags = randomQuote.categoryTags.join(', '); //checks for tags and adds it to the html variable
     html += '<p class="tags">' + tags + '</p>';
   }
-  document.body.style.backgroundColor = "rgb(" + randomColor().toString() + "," + randomColor().toString() + "," + randomColor().toString() + ")";
+  document.body.style.backgroundColor = "rgb(" + randomColor().toString() + "," + randomColor().toString() + "," + randomColor().toString() + ")"; //generates random color and sets the html pages background to that color
   document.getElementById('quote-box').innerHTML = html; //this sets the html within the div "quote-box" to the contents of my html variable.
 }
-setInterval(function() {printQuote();}, 7000);
+setInterval(function() {printQuote();}, 7000); //changes quote every 7 seconds
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
